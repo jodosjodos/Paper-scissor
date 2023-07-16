@@ -44,7 +44,7 @@ const game = () => {
     const computerOption = getComputerChoice();
     const playerSelection = prompt("enter value u want");
     const result = playRound(playerSelection, computerOption);
-
+    console.log(result);
     if (result.includes("won")) {
       personScore++;
     } else {
