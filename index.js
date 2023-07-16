@@ -39,12 +39,15 @@ const playRound = (personOption, computerOption) => {
 const game = () => {
   let computerScore = 0;
   let personScore = 0;
-  let finalResul = "";
+  let finalResult = "";
+
   for (let i = 1; i <= 5; i++) {
     const computerOption = getComputerChoice();
-    const playerSelection = prompt("enter value u want");
+    const playerSelection = prompt("Enter your choice (rock, paper, or scissor):");
     const result = playRound(playerSelection, computerOption);
+    
     console.log(result);
+    
     if (result.includes("won")) {
       personScore++;
     } else {
@@ -53,20 +56,21 @@ const game = () => {
   }
 
   if (personScore > computerScore) {
-    finalResul =
-      "You have won you have the following score" +
+    finalResult =
+      "You have won! You have a score of " +
       personScore +
-      " and computer has " +
-      computerOption;
+      ", while the computer has a score of " +
+      computerScore;
   } else {
-    finalResul =
-      "you have lost , you have " +
+    finalResult =
+      "You have lost! You have a score of " +
       personScore +
-      " where computer have " +
+      ", while the computer has a score of " +
       computerScore;
   }
-  return finalResul;
+
+  return finalResult;
 };
 
-const value=game()
+const value = game();
 console.log(value);
